@@ -385,6 +385,89 @@ export const wafCaseStudy = {
   stack: ['VNetwork WAAP', 'Managed SSL', 'Custom WAF Rules', 'XSS Blocking', 'Path Traversal Blocking'],
 }
 
+export const threatReport = {
+  eyebrow: 'Threat Intelligence',
+  reportId: 'Report #001',
+  title: 'SentinelOps Threat Report #001',
+  date: '2026-09-03',
+  status: 'Resolved',
+  summary:
+    'All malicious requests were blocked by VNetwork WAAP before reaching the Render origin application. No origin-level remediation was required.',
+  stats: [
+    { label: 'Malicious Requests Detected', value: '6', icon: 'radar', tone: 'alert' },
+    { label: 'Attack Type', value: 'Injection', icon: 'terminal', tone: 'alert' },
+    { label: 'Source Region', value: 'United States', icon: 'flag', tone: 'neutral' },
+    { label: 'Requests Blocked', value: '6 / 6', icon: 'shield', tone: 'signal' },
+  ],
+  triggeredPaths: [
+    { path: '/admin', description: 'Automated admin-panel discovery scan.' },
+    { path: '/test123', description: 'Generic throwaway test path used for endpoint recon.' },
+    { path: '/thewall-demo', description: 'Injection payload targeted at the TheWall demo endpoint.' },
+  ],
+  securityControls: [
+    {
+      name: 'Block-Admin-Scan',
+      target: '/admin',
+      description: 'Blocks automated scanning of admin and admin-panel paths.',
+    },
+    {
+      name: 'Block-Test123',
+      target: '/test123',
+      description: 'Blocks requests to common throwaway recon paths.',
+    },
+    {
+      name: 'TheWall-Demo',
+      target: '/thewall-demo',
+      description: 'Custom rule protecting the TheWall demo endpoint from injection payloads.',
+    },
+  ],
+  timeline: [
+    {
+      time: 'T+0:00',
+      title: 'Scan activity detected',
+      description: 'Automated scanner begins probing audit.sentinelops.fyi from a US-based source IP.',
+      status: 'detected',
+    },
+    {
+      time: 'T+0:02',
+      title: 'Injection attempt blocked',
+      description: 'Injection payload submitted against /thewall-demo — blocked by rule TheWall-Demo.',
+      status: 'blocked',
+    },
+    {
+      time: 'T+0:04',
+      title: 'Admin scan blocked',
+      description: 'Request to /admin blocked by rule Block-Admin-Scan.',
+      status: 'blocked',
+    },
+    {
+      time: 'T+0:06',
+      title: 'Recon probe blocked',
+      description: 'Request to /test123 blocked by rule Block-Test123.',
+      status: 'blocked',
+    },
+    {
+      time: 'T+0:09',
+      title: 'Session closed',
+      description: 'All 6 requests blocked at the edge — zero requests reached the Render origin.',
+      status: 'resolved',
+    },
+  ],
+  architecture: {
+    heading: 'Before / After',
+    before: {
+      label: 'Before',
+      flow: ['Public Internet', 'audit.sentinelops.fyi', 'Render Origin'],
+      note: 'No inspection layer in front of the origin — malicious requests would reach the app directly.',
+    },
+    after: {
+      label: 'After',
+      flow: ['Public Internet', 'VNetwork WAAP', 'Render Origin'],
+      note: 'All 6 requests inspected and blocked at the WAAP — zero reached the Render origin.',
+    },
+  },
+}
+
 export const contact = {
   heading: "Let's talk security",
   body: "Actively looking for SOC, DFIR, or security engineering internships and entry-level opportunities, plus open to collaborating on MCP/AI-security tooling. The fastest way to reach me is email — I read everything that comes in.",

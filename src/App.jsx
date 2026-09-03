@@ -8,6 +8,7 @@ import Labs from './components/Labs.jsx'
 import Skills from './components/Skills.jsx'
 import WAFCaseStudy from './components/WAFCaseStudy.jsx'
 import Timeline from './components/Timeline.jsx'
+import ThreatReport from './components/ThreatReport.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
@@ -25,6 +26,7 @@ export default function App() {
           <Skills />
           <WAFCaseStudy />
           <Timeline />
+          <ThreatReport />
           <Contact />
         </main>
         <Footer />

@@ -5,11 +5,12 @@ import Icon from './Icon.jsx'
 const links = [
   { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
-  { href: '#infrastructure', label: 'Infrastructure' },
+  { href: '#infrastructure', label: 'Infra' },
   { href: '#labs', label: 'Labs' },
   { href: '#skills', label: 'Skills' },
   { href: '#waf-case-study', label: 'WAF Study' },
   { href: '#timeline', label: 'Timeline' },
+  { href: '#threat-report', label: 'Threat Report' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -42,7 +43,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-5 xl:flex">
+        <ul className="hidden items-center gap-4 xl:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
