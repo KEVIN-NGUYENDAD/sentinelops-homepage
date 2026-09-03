@@ -413,46 +413,46 @@ export const labs = {
 
 export const timeline = {
   eyebrow: 'Timeline',
-  title: 'How this got built',
-  intro: 'Less a resume, more a build log — the milestones that shaped the tooling above.',
+  title: 'How SentinelOps Evolved',
+  intro: 'A build log of projects, experiments, failures, and lessons learned.',
   entries: [
     {
-      date: '2023',
-      title: 'Home-SOC lab stood up',
+      title: 'Cybersecurity Foundations',
       description:
-        'Deployed Wazuh, Suricata, and Zeek in a self-hosted lab to study real attack telemetry instead of just reading about it.',
+        'Started building cybersecurity labs, DFIR exercises, and hands-on security projects to learn through practice rather than theory.',
     },
     {
-      date: '2024',
-      title: 'First DFIR case worked end-to-end',
+      title: 'Home SOC Development',
       description:
-        'Ran a full incident lifecycle solo — detection, containment, forensic timeline, and writeup — using the home-lab as the range.',
+        'Built a home SOC environment focused on monitoring, detection engineering, traffic visibility, and threat hunting.',
     },
     {
-      date: '2024',
-      title: 'audit.sentinelops.fyi shipped',
+      title: 'Security Automation',
       description:
-        'Launched a public network security audit tool on Render, then spent the following months hardening the perimeter in front of it.',
+        'Began automating repetitive security tasks and experiments using Python, PowerShell, and custom workflows.',
     },
     {
-      date: '2025',
-      title: 'VNetwork WAAP put in front of Render',
-      description: 'Documented in the case study below — moved the audit tool from an unmonitored origin to a managed, logged perimeter.',
+      title: 'AI Security Research',
+      description: 'Explored AI-assisted analysis, security copilots, prompt workflows, and AI agent architectures.',
     },
     {
-      date: '2025',
-      title: 'mcp-cyber-tools and TheWall built',
-      description: 'Started wiring AI agents into SOC tooling via MCP, and shipped a live view of perimeter activity to go with it.',
+      title: 'MCP Development',
+      description:
+        'Started building MCP Cyber Tools to connect AI agents with security workflows, DFIR tooling, and operational data sources.',
     },
     {
-      date: '2025',
-      title: 'AI security copilot in daily use',
-      description: 'kevin-cyber-security-copilot moved from prototype to a tool used for real first-pass alert triage.',
+      title: 'Public Security Projects',
+      description:
+        'Released public-facing projects including security audit tooling, portfolio infrastructure, and supporting platforms.',
     },
     {
-      date: 'Now',
-      title: 'Productizing and red-teaming the AI layer',
-      description: 'Building Sass-ai-app as a multi-tenant AI agent platform while red-teaming the MCP layer it depends on.',
+      title: 'SentinelOps',
+      description: 'Unified projects, documentation, research, and security tooling under the SentinelOps ecosystem.',
+    },
+    {
+      title: 'Now',
+      description:
+        'Expanding MCP Cyber Tools, Home SOC capabilities, AI security workflows, and security automation projects.',
     },
   ],
 }
