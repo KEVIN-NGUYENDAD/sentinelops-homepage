@@ -470,6 +470,6 @@ export const threatReport = {
 
 export const contact = {
   heading: "Let's talk security",
-  body: "Actively looking for SOC, DFIR, or security engineering internships and entry-level opportunities, plus open to collaborating on MCP/AI-security tooling. The fastest way to reach me is email — I read everything that comes in.",
+  body: "Tôi đang phát triển các dự án về SOC, DFIR, MCP, AI Security và Security Automation thông qua hệ sinh thái SentinelOps.\n\nNếu bạn quan tâm đến bất kỳ dự án nào trên website này, muốn trao đổi ý tưởng hoặc hợp tác phát triển, hãy liên hệ với tôi qua email. Tôi đọc tất cả email gửi đến.",
   email: 'contact@sentinelops.fyi',
 }

@@ -27,7 +27,7 @@ export default function Contact() {
           <div className="lg:col-span-2">
             <p className="eyebrow">Contact</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{contact.heading}</h2>
-            <p className="mt-4 text-slate-600 dark:text-slate-300">{contact.body}</p>
+            <p className="mt-4 whitespace-pre-line text-slate-600 dark:text-slate-300">{contact.body}</p>
 
             <a
               href={`mailto:${contact.email}`}
