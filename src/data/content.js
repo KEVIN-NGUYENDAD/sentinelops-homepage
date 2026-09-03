@@ -206,6 +206,60 @@ export const mcpPortal = {
   },
 }
 
+export const homeSOC = {
+  eyebrow: 'Home SOC',
+  title: 'Home SOC',
+  subtitle: 'Security Monitoring, Detection Engineering, Threat Hunting, and Incident Analysis',
+  overview:
+    'Home SOC is the self-hosted security operations lab behind home-soc-reports — a Wazuh-based SIEM paired with Suricata network sensors, used to practice detection engineering and threat hunting against real attack telemetry rather than simulated coursework.',
+  capabilities: {
+    heading: 'Featured Capabilities',
+    items: [
+      {
+        title: 'Wazuh',
+        description: 'Central SIEM for log aggregation, correlation, and alerting across every sensor in the lab.',
+        icon: 'server',
+      },
+      {
+        title: 'Suricata',
+        description: 'Inline network intrusion detection feeding raw traffic signals into the SIEM.',
+        icon: 'radar',
+      },
+      {
+        title: 'Threat Hunting',
+        description: 'Proactive, hypothesis-driven searches across SIEM data for activity that alerts alone would miss.',
+        icon: 'search',
+      },
+      {
+        title: 'Detection Engineering',
+        description: 'Sigma rules and correlation logic tuned against real traffic to cut false positives.',
+        icon: 'terminal',
+      },
+      {
+        title: 'Security Monitoring',
+        description: 'Continuous log review and dashboarding to track detection coverage over time.',
+        icon: 'pulse',
+      },
+    ],
+  },
+  architecture: {
+    heading: 'Architecture Diagram',
+    flow: ['Network Traffic', 'Suricata Sensor', 'Wazuh SIEM', 'Detection & Reporting'],
+    note: 'Suricata inspects traffic at the network layer; Wazuh correlates the resulting alerts with host and log data before they reach detection and reporting.',
+  },
+  repository: {
+    heading: 'GitHub Repository',
+    name: 'home-soc-reports',
+    url: 'https://github.com/KEVIN-NGUYENDAD/home-soc-reports',
+    description: 'Source for the automated reporting pipeline built on top of this Home SOC.',
+  },
+  status: {
+    heading: 'Status',
+    label: 'Active Development',
+    note: 'Actively maintained as the detection and threat-hunting range for the rest of the SentinelOps tooling.',
+  },
+}
+
 export const skillGroups = [
   {
     title: 'Detection & Monitoring',
@@ -554,6 +608,6 @@ export const threatReport = {
 
 export const contact = {
   heading: "Let's talk security",
-  body: "I'm building projects across SOC, DFIR, MCP, AI Security, and Security Automation through the SentinelOps ecosystem.\n\nIf you're interested in any project on this website, would like to discuss ideas, or explore a potential collaboration, feel free to reach out.\n\nI read every email that comes in.",
+  body: "I'm building projects across SOC, DFIR, MCP, AI Security, and Security Automation through the SentinelOps ecosystem.\n\nIf you're interested in any project on this website, would like to discuss ideas, or explore collaboration, feel free to reach out.\n\nI read every email that comes in.",
   email: 'contact@sentinelops.fyi',
 }

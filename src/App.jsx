@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import FeaturedProjects from './components/FeaturedProjects.jsx'
 import MCPPortal from './components/MCPPortal.jsx'
+import HomeSOC from './components/HomeSOC.jsx'
 import LiveInfrastructure from './components/LiveInfrastructure.jsx'
 import SentinelOpsInfrastructure from './components/SentinelOpsInfrastructure.jsx'
 import Labs from './components/Labs.jsx'
@@ -24,6 +25,7 @@ export default function App() {
           <About />
           <FeaturedProjects />
           <MCPPortal />
+          <HomeSOC />
           <LiveInfrastructure />
           <SentinelOpsInfrastructure />
           <Labs />
