@@ -5,8 +5,11 @@ import Icon from './Icon.jsx'
 const links = [
   { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
+  { href: '#infrastructure', label: 'Infrastructure' },
+  { href: '#labs', label: 'Labs' },
   { href: '#skills', label: 'Skills' },
-  { href: '#waf-case-study', label: 'WAF Case Study' },
+  { href: '#waf-case-study', label: 'WAF Study' },
+  { href: '#timeline', label: 'Timeline' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -39,12 +42,12 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-5 xl:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-mono text-sm text-slate-600 transition hover:text-signal-600 dark:text-slate-300 dark:hover:text-signal-400"
+                className="whitespace-nowrap font-mono text-sm text-slate-600 transition hover:text-signal-600 dark:text-slate-300 dark:hover:text-signal-400"
               >
                 {l.label}
               </a>
@@ -52,7 +55,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <button
             onClick={toggleTheme}
             aria-label="Toggle color theme"
@@ -65,7 +68,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <button
             onClick={toggleTheme}
             aria-label="Toggle color theme"
@@ -85,7 +88,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white px-6 py-4 md:hidden dark:border-ink-700 dark:bg-ink-950">
+        <div className="border-t border-slate-200 bg-white px-6 py-4 xl:hidden dark:border-ink-700 dark:bg-ink-950">
           <ul className="flex flex-col gap-4">
             {links.map((l) => (
               <li key={l.href}>

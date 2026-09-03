@@ -104,6 +104,36 @@ export const projects = [
     links: { repo: 'https://github.com/sentinelops/kevin-cyber-security-copilot' },
     accent: 'signal',
   },
+  {
+    slug: 'the-wall',
+    name: 'TheWall',
+    tagline: 'A real-time wall of blocked and in-progress attacks across the home-lab perimeter.',
+    description:
+      'A self-hosted dashboard that turns raw firewall, IDS, and honeypot logs into a live feed instead of buried log files — geolocated source IPs, ATT&CK technique tags where applicable, and a running stream of what the perimeter is actually seeing. It is the public-facing view onto the systems listed in Live Infrastructure below.',
+    stack: ['Python', 'WebSockets', 'React', 'GeoIP', 'Suricata', 'Redis'],
+    highlights: [
+      'Streams blocked-traffic events to the browser over WebSockets in real time',
+      'Geo-tags and ATT&CK-tags every blocked source it can attribute',
+      'Built directly on top of the Suricata/Zeek sensors and honeypot cluster',
+    ],
+    links: { repo: 'https://github.com/sentinelops/the-wall' },
+    accent: 'signal',
+  },
+  {
+    slug: 'sass-ai-app',
+    name: 'Sass-ai-app',
+    tagline: 'A multi-tenant SaaS product wrapping the security copilot into a commercial app.',
+    description:
+      "Takes the assistant behind kevin-cyber-security-copilot and productizes it: auth, billing, and rate-limited AI usage per tenant — with the same AI-security discipline applied at SaaS scale, so one tenant's prompts, logs, or tool calls can never leak into another's context.",
+    stack: ['Next.js', 'TypeScript', 'Postgres', 'Stripe', 'Claude API', 'Row-Level Security'],
+    highlights: [
+      'Tenant isolation enforced at the database layer via row-level security, not just app logic',
+      'Per-tenant rate limiting and usage metering feeding billing',
+      'Reuses the prompt-injection guardrails from mcp-cyber-tools at multi-tenant scale',
+    ],
+    links: { repo: 'https://github.com/sentinelops/sass-ai-app' },
+    accent: 'signal',
+  },
 ]
 
 export const skillGroups = [
@@ -132,6 +162,160 @@ export const skillGroups = [
     skills: ['React', 'Vite', 'Tailwind CSS', 'TypeScript'],
   },
 ]
+
+export const liveInfrastructure = {
+  eyebrow: 'Live Infrastructure',
+  title: 'What is actually running',
+  intro:
+    'The systems behind this site and the home-lab SOC — not a list of tools I have used once, but what stays online and gets maintained. Snapshot below, not a live poll.',
+  asOf: 'Last reviewed September 2026',
+  systems: [
+    {
+      name: 'audit.sentinelops.fyi',
+      category: 'Public Service',
+      status: 'operational',
+      description: 'Public network security audit tool, WAF-fronted with a rate-limited scan endpoint.',
+      metric: { label: 'Uptime (30d)', value: '99.9%' },
+      link: 'https://audit.sentinelops.fyi',
+    },
+    {
+      name: 'Edge WAF',
+      category: 'Perimeter',
+      status: 'operational',
+      description: 'Cloudflare WAF + tuned OWASP CRS fronting every public-facing service. Detailed below.',
+      metric: { label: 'Requests blocked (7d)', value: '~1.2k' },
+    },
+    {
+      name: 'TheWall',
+      category: 'Public Service',
+      status: 'operational',
+      description: 'Public-facing live feed of blocked attacker traffic, sourced from the sensors below.',
+      metric: { label: 'Events streamed (7d)', value: '2.4k+' },
+    },
+    {
+      name: 'Home-SOC SIEM (Wazuh)',
+      category: 'Detection',
+      status: 'monitoring',
+      description: 'Central log aggregation and correlation for every sensor in the lab.',
+      metric: { label: 'Events/day', value: '~40k' },
+    },
+    {
+      name: 'Suricata / Zeek Sensors',
+      category: 'Network',
+      status: 'monitoring',
+      description: 'Inline and passive network sensors feeding the SIEM and home-soc-reports pipeline.',
+      metric: { label: 'Sensors online', value: '3/3' },
+    },
+    {
+      name: 'Honeypot Cluster',
+      category: 'Deception',
+      status: 'monitoring',
+      description: 'Low- and medium-interaction honeypots capturing opportunistic scanning and credential stuffing.',
+      metric: { label: 'Sessions logged (7d)', value: '860+' },
+    },
+    {
+      name: 'mcp-cyber-tools API',
+      category: 'AI Tooling',
+      status: 'hardening',
+      description: 'MCP server layer giving AI agents scoped, audited access to the tools above.',
+      metric: { label: 'Tool calls audited', value: '100%' },
+    },
+    {
+      name: 'Sass-ai-app',
+      category: 'AI Tooling',
+      status: 'hardening',
+      description: 'Multi-tenant productization of the security copilot — currently in a private beta.',
+      metric: { label: 'Tenants', value: 'Private beta' },
+    },
+  ],
+}
+
+export const labs = {
+  eyebrow: 'Labs',
+  title: 'Research & range notes',
+  intro:
+    "Smaller, sharper than the projects above — adversarial exercises run against the home-lab, written up the way I'd document a real investigation.",
+  entries: [
+    {
+      title: 'Living-off-the-Land Detection Lab',
+      period: '2025',
+      status: 'Complete',
+      summary:
+        'Simulated LOLBin abuse (certutil, mshta, rundll32) inside an isolated Windows range and wrote Sigma rules to catch it without drowning the SIEM in false positives.',
+      tags: ['T1218', 'Sigma', 'Windows Event Logs', 'Detection Engineering'],
+    },
+    {
+      title: 'Honeypot Telemetry: 30 Days of SSH Brute-Force',
+      period: '2025',
+      status: 'Complete',
+      summary:
+        'Ran a Cowrie honeypot for a month and analyzed credential-stuffing patterns, top source ASNs, and reused password lists against real attacker behavior.',
+      tags: ['Cowrie', 'Threat Intel', 'GeoIP', 'Credential Attacks'],
+    },
+    {
+      title: 'Malware Triage: Phishing Payload Static & Dynamic Analysis',
+      period: '2025',
+      status: 'Complete',
+      summary:
+        'Took a phishing attachment, detonated it in an isolated VM, and produced a full IOC writeup — hashes, C2 infrastructure, and persistence mechanism.',
+      tags: ['Malware Analysis', 'Sandboxing', 'IOC Extraction'],
+    },
+    {
+      title: 'Prompt-Injection Red Team on mcp-cyber-tools',
+      period: 'Ongoing',
+      status: 'In progress',
+      summary:
+        'Adversarially testing the MCP tool layer with injected log content and tool-call chaining to find where an agent could be tricked into exceeding its scope.',
+      tags: ['AI Security', 'Prompt Injection', 'MCP', 'Red Team'],
+    },
+  ],
+}
+
+export const timeline = {
+  eyebrow: 'Timeline',
+  title: 'How this got built',
+  intro: 'Less a resume, more a build log — the milestones that shaped the tooling above.',
+  entries: [
+    {
+      date: '2023',
+      title: 'Home-SOC lab stood up',
+      description:
+        'Deployed Wazuh, Suricata, and Zeek in a self-hosted lab to study real attack telemetry instead of just reading about it.',
+    },
+    {
+      date: '2024',
+      title: 'First DFIR case worked end-to-end',
+      description:
+        'Ran a full incident lifecycle solo — detection, containment, forensic timeline, and writeup — using the home-lab as the range.',
+    },
+    {
+      date: '2024',
+      title: 'audit.sentinelops.fyi shipped',
+      description:
+        'Launched a public network security audit tool, then spent the following months hardening it against the exact traffic it was built to study.',
+    },
+    {
+      date: '2025',
+      title: 'WAF tuned from detect-only to enforced',
+      description: 'Documented in the case study below — moved the audit tool from an unmonitored edge to a tuned, logged perimeter.',
+    },
+    {
+      date: '2025',
+      title: 'mcp-cyber-tools and TheWall built',
+      description: 'Started wiring AI agents into SOC tooling via MCP, and shipped a live view of perimeter activity to go with it.',
+    },
+    {
+      date: '2025',
+      title: 'AI security copilot in daily use',
+      description: 'kevin-cyber-security-copilot moved from prototype to a tool used for real first-pass alert triage.',
+    },
+    {
+      date: 'Now',
+      title: 'Productizing and red-teaming the AI layer',
+      description: 'Building Sass-ai-app as a multi-tenant product while red-teaming the MCP layer it depends on.',
+    },
+  ],
+}
 
 export const wafCaseStudy = {
   eyebrow: 'Case Study',
