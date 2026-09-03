@@ -1,14 +1,16 @@
+const GITHUB_PROFILE = 'https://github.com/KEVIN-NGUYENDAD'
+
 export const profile = {
   name: 'Kevin (Tam) Nguyen',
   handle: 'sentinelops',
-  role: 'Cybersecurity Engineer — SOC / DFIR / AI Security',
+  role: 'Cybersecurity Student | SOC | DFIR | AI Security',
   location: 'Based remote-first',
-  tagline: 'I build the tooling and detections that catch what perimeter defenses miss.',
+  tagline: 'I build the SOC tooling, detections, and AI-security guardrails I want to work with on a real team.',
   summary:
-    "I work across the SOC lifecycle — triage, detection engineering, and digital forensics & incident response — and spend my off-hours building a home-lab SOC to test the same tradecraft attackers use. Lately that means wiring AI agents (MCP) into security tooling and hardening the web infrastructure that fronts it.",
+    "I'm a cybersecurity student focused on SOC operations, DFIR, and AI security, and I learn by building rather than just studying. That means running a self-hosted home-SOC to practice detection engineering and incident response against real traffic, and developing MCP tooling that gives AI agents safe, auditable access to security data — hands-on work, not classroom simulations.",
   email: 'contact@sentinelops.fyi',
   socials: [
-    { label: 'GitHub', href: 'https://github.com/sentinelops', icon: 'github' },
+    { label: 'GitHub', href: GITHUB_PROFILE, icon: 'github' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/kevin-nguyen', icon: 'linkedin' },
     { label: 'Audit Tool', href: 'https://audit.sentinelops.fyi', icon: 'shield' },
   ],
@@ -18,12 +20,12 @@ export const profile = {
 export const focusAreas = [
   {
     title: 'SOC Operations',
-    description: 'Alert triage, detection tuning, and building runbooks that turn noisy signals into confident verdicts.',
+    description: 'Alert triage and detection tuning, practiced hands-on against real home-SOC traffic — building the runbooks I\'d want on a real team.',
     icon: 'radar',
   },
   {
     title: 'DFIR',
-    description: 'Timeline reconstruction, memory & disk forensics, and root-cause writeups after something goes wrong.',
+    description: 'Timeline reconstruction, memory & disk forensics, and root-cause writeups, run end-to-end in the home-lab.',
     icon: 'search',
   },
   {
@@ -56,7 +58,7 @@ export const projects = [
       'IOC enrichment across VirusTotal, AbuseIPDB, and internal threat intel',
       'Used as the backend for an in-house security copilot',
     ],
-    links: { repo: 'https://github.com/sentinelops/mcp-cyber-tools' },
+    links: { repo: GITHUB_PROFILE },
     accent: 'signal',
   },
   {
@@ -71,7 +73,7 @@ export const projects = [
       'Weekly PDF/HTML reports generated with zero manual authoring',
       'Dashboards tracking detection coverage over time',
     ],
-    links: { repo: 'https://github.com/sentinelops/home-soc-reports' },
+    links: { repo: GITHUB_PROFILE },
     accent: 'signal',
   },
   {
@@ -86,7 +88,7 @@ export const projects = [
       'Severity-ranked remediation checklist per scan',
       'Live at audit.sentinelops.fyi',
     ],
-    links: { live: 'https://audit.sentinelops.fyi', repo: 'https://github.com/sentinelops/network-security-audit-frontend' },
+    links: { live: 'https://audit.sentinelops.fyi', repo: GITHUB_PROFILE },
     accent: 'signal',
   },
   {
@@ -101,37 +103,37 @@ export const projects = [
       'Guardrails against prompt injection from ingested log content',
       'Cut manual first-pass triage time in internal testing',
     ],
-    links: { repo: 'https://github.com/sentinelops/kevin-cyber-security-copilot' },
+    links: { repo: GITHUB_PROFILE },
     accent: 'signal',
   },
   {
     slug: 'the-wall',
     name: 'TheWall',
-    tagline: 'A real-time wall of blocked and in-progress attacks across the home-lab perimeter.',
+    tagline: 'A security visualization and attack-monitoring platform for the home-lab perimeter.',
     description:
-      'A self-hosted dashboard that turns raw firewall, IDS, and honeypot logs into a live feed instead of buried log files — geolocated source IPs, ATT&CK technique tags where applicable, and a running stream of what the perimeter is actually seeing. It is the public-facing view onto the systems listed in Live Infrastructure below.',
+      'A self-hosted visualization platform that turns raw firewall, IDS, and honeypot logs into a live, browser-based view of the perimeter — geolocated source IPs, MITRE ATT&CK technique tags where applicable, and a running stream of blocked and in-progress activity, so attack surface is something you can watch instead of grep through.',
     stack: ['Python', 'WebSockets', 'React', 'GeoIP', 'Suricata', 'Redis'],
     highlights: [
       'Streams blocked-traffic events to the browser over WebSockets in real time',
       'Geo-tags and ATT&CK-tags every blocked source it can attribute',
       'Built directly on top of the Suricata/Zeek sensors and honeypot cluster',
     ],
-    links: { repo: 'https://github.com/sentinelops/the-wall' },
+    links: { repo: GITHUB_PROFILE },
     accent: 'signal',
   },
   {
     slug: 'sass-ai-app',
     name: 'Sass-ai-app',
-    tagline: 'A multi-tenant SaaS product wrapping the security copilot into a commercial app.',
+    tagline: 'A multi-tenant SaaS platform for AI agents that handle recurring check-in and automation workflows.',
     description:
-      "Takes the assistant behind kevin-cyber-security-copilot and productizes it: auth, billing, and rate-limited AI usage per tenant — with the same AI-security discipline applied at SaaS scale, so one tenant's prompts, logs, or tool calls can never leak into another's context.",
+      'A multi-tenant SaaS built around AI agents that run scheduled check-in workflows — status pings, follow-ups, and light automation — for each tenant. Explores the SaaS side of AI security: tenant isolation, auth, billing, and per-tenant rate-limited agent usage, so one tenant\'s agent context, prompts, or automations can never leak into another\'s.',
     stack: ['Next.js', 'TypeScript', 'Postgres', 'Stripe', 'Claude API', 'Row-Level Security'],
     highlights: [
+      'AI agents run per-tenant scheduled check-in and automation workflows',
       'Tenant isolation enforced at the database layer via row-level security, not just app logic',
       'Per-tenant rate limiting and usage metering feeding billing',
-      'Reuses the prompt-injection guardrails from mcp-cyber-tools at multi-tenant scale',
     ],
-    links: { repo: 'https://github.com/sentinelops/sass-ai-app' },
+    links: { repo: GITHUB_PROFILE },
     accent: 'signal',
   },
 ]
@@ -147,7 +149,7 @@ export const skillGroups = [
   },
   {
     title: 'AppSec & Network',
-    skills: ['ModSecurity / OWASP CRS', 'Cloudflare WAF', 'Nmap', 'Burp Suite', 'TLS/PKI', 'Nginx Hardening'],
+    skills: ['VNetwork WAAP', 'ModSecurity / OWASP CRS', 'Nmap', 'Burp Suite', 'TLS/PKI', 'Nginx Hardening'],
   },
   {
     title: 'AI & Automation',
@@ -155,7 +157,7 @@ export const skillGroups = [
   },
   {
     title: 'Platform & Cloud',
-    skills: ['Docker', 'Linux Administration', 'AWS', 'CI/CD', 'Infrastructure as Code'],
+    skills: ['Docker', 'Linux Administration', 'Render', 'AWS', 'CI/CD', 'Infrastructure as Code'],
   },
   {
     title: 'Frontend',
@@ -174,22 +176,22 @@ export const liveInfrastructure = {
       name: 'audit.sentinelops.fyi',
       category: 'Public Service',
       status: 'operational',
-      description: 'Public network security audit tool, WAF-fronted with a rate-limited scan endpoint.',
+      description: 'Public network security audit tool, hosted on Render behind VNetwork WAAP with a rate-limited scan endpoint.',
       metric: { label: 'Uptime (30d)', value: '99.9%' },
       link: 'https://audit.sentinelops.fyi',
     },
     {
-      name: 'Edge WAF',
+      name: 'VNetwork WAAP',
       category: 'Perimeter',
       status: 'operational',
-      description: 'Cloudflare WAF + tuned OWASP CRS fronting every public-facing service. Detailed below.',
+      description: 'Managed SSL and custom WAF rules fronting every public-facing service before it reaches the Render origin. Detailed below.',
       metric: { label: 'Requests blocked (7d)', value: '~1.2k' },
     },
     {
       name: 'TheWall',
       category: 'Public Service',
       status: 'operational',
-      description: 'Public-facing live feed of blocked attacker traffic, sourced from the sensors below.',
+      description: 'Public-facing visualization of blocked attacker traffic, sourced from the sensors below.',
       metric: { label: 'Events streamed (7d)', value: '2.4k+' },
     },
     {
@@ -224,7 +226,7 @@ export const liveInfrastructure = {
       name: 'Sass-ai-app',
       category: 'AI Tooling',
       status: 'hardening',
-      description: 'Multi-tenant productization of the security copilot — currently in a private beta.',
+      description: 'Multi-tenant AI agent platform for check-in workflows and automation — currently in a private beta.',
       metric: { label: 'Tenants', value: 'Private beta' },
     },
   ],
@@ -292,12 +294,12 @@ export const timeline = {
       date: '2024',
       title: 'audit.sentinelops.fyi shipped',
       description:
-        'Launched a public network security audit tool, then spent the following months hardening it against the exact traffic it was built to study.',
+        'Launched a public network security audit tool on Render, then spent the following months hardening the perimeter in front of it.',
     },
     {
       date: '2025',
-      title: 'WAF tuned from detect-only to enforced',
-      description: 'Documented in the case study below — moved the audit tool from an unmonitored edge to a tuned, logged perimeter.',
+      title: 'VNetwork WAAP put in front of Render',
+      description: 'Documented in the case study below — moved the audit tool from an unmonitored origin to a managed, logged perimeter.',
     },
     {
       date: '2025',
@@ -312,70 +314,79 @@ export const timeline = {
     {
       date: 'Now',
       title: 'Productizing and red-teaming the AI layer',
-      description: 'Building Sass-ai-app as a multi-tenant product while red-teaming the MCP layer it depends on.',
+      description: 'Building Sass-ai-app as a multi-tenant AI agent platform while red-teaming the MCP layer it depends on.',
     },
   ],
 }
 
 export const wafCaseStudy = {
   eyebrow: 'Case Study',
-  title: 'Hardening audit.sentinelops.fyi with a tuned WAF',
+  title: 'Hardening audit.sentinelops.fyi with VNetwork WAAP',
   summary:
-    'audit.sentinelops.fyi runs a public, unauthenticated scanning tool — which makes it an attractive target for scraping, automated exploitation attempts, and abuse of the scan endpoint itself. This case study covers how a Web Application Firewall was deployed and tuned in front of it: from a stock ruleset that broke legitimate traffic, to a calibrated policy that blocks real attacks without hurting the people the tool is built for.',
+    'audit.sentinelops.fyi runs a public, unauthenticated scanning tool on Render — which makes it an attractive target for scraping, automated exploitation attempts, and abuse of the scan endpoint itself. This case study covers the actual deployment: VNetwork WAAP sitting in front of the Render origin, handling TLS, custom WAF rules, and blocking the attack classes most relevant to a tool that accepts user-submitted targets and renders scan output back to the browser.',
+  architecture: {
+    heading: 'Architecture',
+    flow: ['audit.sentinelops.fyi', 'VNetwork WAAP', 'Render Origin'],
+  },
   problem: {
     heading: 'The problem',
     points: [
-      'The site exposes a public "submit a target, get a scan" endpoint — exactly the shape automated attackers and scrapers look for.',
-      'Turning on the OWASP Core Rule Set at default sensitivity (paranoia level 2) generated false positives on legitimate scan submissions, blocking real users.',
-      'No visibility existed into what traffic was actually hitting the edge before a WAF was introduced — decisions were being made blind.',
+      'The site exposes a public "submit a target, get a scan" endpoint on Render — exactly the shape automated attackers and scrapers look for.',
+      'Render\'s default origin URL had no request inspection in front of it — anything hitting it directly could bypass whatever protection sat in front of the public domain.',
+      'TLS and WAF rules were unmanaged and inconsistent, with no single enforcement point for XSS or path-traversal attempts before requests reached the app.',
     ],
   },
   approach: {
     heading: 'Approach',
     steps: [
       {
-        title: 'Baseline before blocking',
+        title: 'Baseline before enforcing',
         detail:
-          'Ran the WAF in detection-only (log, don\'t block) mode for two weeks to capture a real traffic baseline — separating legitimate scan submissions from scanners, bots, and probing traffic.',
+          'Ran VNetwork WAAP in monitor mode first to capture a real traffic baseline against Render — separating legitimate scan submissions from scanners, bots, and probing traffic.',
       },
       {
-        title: 'Tune the ruleset to the app',
+        title: 'Move TLS termination to managed SSL',
         detail:
-          'Dropped OWASP CRS from paranoia level 2 to a custom profile: disabled rules that false-positived on legitimate hostnames/IPs in the scan-target field, and added targeted rules for the endpoints actually exposed.',
+          'Terminated TLS at VNetwork\'s managed SSL layer in front of the Render origin, removing manual certificate handling and ensuring every request is inspected before decryption reaches the app.',
       },
       {
-        title: 'Rate-limit the expensive path',
+        title: 'Write custom WAF rules for the scan endpoint',
         detail:
-          'The scan endpoint is compute-expensive, so it got its own rate-limit tier (per-IP + per-session) distinct from the static frontend, preventing scan-endpoint abuse from degrading service for everyone else.',
+          'Scoped custom WAF rules to the audit tool\'s scan-submission endpoint instead of relying on an untuned generic ruleset, avoiding false positives on legitimate hostnames and IPs submitted as scan targets.',
       },
       {
-        title: 'Stage the rollout',
+        title: 'Enable XSS and path-traversal blocking',
         detail:
-          'Moved from detect-only to block mode gradually, rule-group by rule-group, watching false-positive rate at each step before widening enforcement.',
+          'Turned on explicit XSS blocking and path-traversal blocking — the two attack classes most relevant to a tool that accepts user-submitted input and renders scan results back to the browser.',
+      },
+      {
+        title: 'Lock Render down to a pure origin',
+        detail:
+          'Restricted the Render service to only accept traffic from VNetwork\'s WAAP, so the origin can no longer be reached directly and every request is guaranteed to pass through the WAAP first.',
       },
       {
         title: 'Close the feedback loop',
         detail:
-          'WAF logs feed into the home-SOC pipeline (see home-soc-reports) so blocked traffic is triaged the same way any other SOC alert would be, instead of being a black box.',
+          'WAAP logs feed into the home-SOC pipeline (see home-soc-reports) so blocked traffic is triaged the same way any other SOC alert would be, instead of being a black box.',
       },
     ],
   },
   results: {
     heading: 'Results',
     metrics: [
-      { value: '0', label: 'Legitimate submissions blocked post-tuning' },
-      { value: '~92%', label: 'Reduction in automated scan-endpoint abuse' },
-      { value: '<2 weeks', label: 'From detect-only baseline to enforced ruleset' },
-      { value: '100%', label: 'Blocked traffic now visible in SOC dashboards' },
+      { value: '100%', label: 'Public traffic routed through VNetwork WAAP' },
+      { value: '0', label: 'Direct-to-origin requests reaching Render' },
+      { value: '2', label: 'Attack classes explicitly blocked at the edge (XSS, path traversal)' },
+      { value: 'Managed', label: 'TLS/SSL — no manual certificate handling' },
     ],
     narrative:
-      'The tuned WAF now sits transparently in front of the audit tool: real users notice nothing, automated abuse of the scan endpoint dropped sharply, and every block decision is logged and reviewable — turning what used to be an unmonitored edge into another source of SOC telemetry.',
+      'VNetwork WAAP now sits transparently between audit.sentinelops.fyi and its Render origin: TLS is managed, the origin is unreachable directly, and XSS and path-traversal attempts are blocked before they ever reach the app — with every block decision logged and reviewable through the home-SOC pipeline instead of disappearing into a black box.',
   },
-  stack: ['Cloudflare WAF', 'OWASP Core Rule Set', 'Nginx', 'Rate Limiting', 'Wazuh (log ingestion)'],
+  stack: ['VNetwork WAAP', 'Managed SSL', 'Custom WAF Rules', 'XSS Blocking', 'Path Traversal Blocking'],
 }
 
 export const contact = {
   heading: "Let's talk security",
-  body: "Open to SOC, DFIR, and security engineering roles, as well as collaboration on MCP/AI-security tooling. The fastest way to reach me is email — I read everything that comes in.",
+  body: "Actively looking for SOC, DFIR, or security engineering internships and entry-level opportunities, plus open to collaborating on MCP/AI-security tooling. The fastest way to reach me is email — I read everything that comes in.",
   email: 'contact@sentinelops.fyi',
 }

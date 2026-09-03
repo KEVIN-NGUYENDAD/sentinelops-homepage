@@ -1,8 +1,9 @@
+import { Fragment } from 'react'
 import { wafCaseStudy } from '../data/content.js'
 import Icon from './Icon.jsx'
 
 export default function WAFCaseStudy() {
-  const { eyebrow, title, summary, problem, approach, results, stack } = wafCaseStudy
+  const { eyebrow, title, summary, architecture, problem, approach, results, stack } = wafCaseStudy
 
   return (
     <section
@@ -22,6 +23,27 @@ export default function WAFCaseStudy() {
               {tech}
             </span>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <p className="mb-3 font-mono text-xs uppercase tracking-wide text-slate-400 dark:text-slate-500">
+            {architecture.heading}
+          </p>
+          <div className="card flex flex-col items-stretch gap-3 p-5 sm:flex-row sm:items-center sm:gap-4 sm:p-6">
+            {architecture.flow.map((node, i) => (
+              <Fragment key={node}>
+                <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-center font-mono text-sm font-medium dark:border-ink-600 dark:bg-ink-800 sm:flex-1">
+                  {node}
+                </div>
+                {i < architecture.flow.length - 1 && (
+                  <Icon
+                    name="arrowRight"
+                    className="mx-auto h-5 w-5 shrink-0 rotate-90 text-signal-500 sm:rotate-0"
+                  />
+                )}
+              </Fragment>
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
