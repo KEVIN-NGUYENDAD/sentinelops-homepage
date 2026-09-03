@@ -144,19 +144,19 @@ export default function ThreatReport() {
         <div className="mt-8 card p-6 sm:p-8">
           <div className="mb-6 inline-flex items-center gap-2 text-slate-700 dark:text-slate-200">
             <Icon name="pulse" className="h-5 w-5 text-signal-500" />
-            <h3 className="font-mono text-sm uppercase tracking-wide">Event Timeline</h3>
+            <h3 className="font-mono text-sm uppercase tracking-wide">Detection &amp; Response Sequence</h3>
           </div>
 
           <ol className="relative space-y-7 border-l border-slate-200 pl-6 dark:border-ink-600 sm:pl-8">
             {timeline.map((event) => {
               const s = timelineStatusStyles[event.status] ?? timelineStatusStyles.detected
               return (
-                <li key={event.time} className="relative">
+                <li key={event.step} className="relative">
                   <span
                     className={`absolute -left-[calc(1.5rem+5px)] top-1 h-3 w-3 rounded-full ring-4 ring-slate-50 dark:ring-ink-900 sm:-left-[calc(2rem+5px)] ${s.dot}`}
                   />
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-mono text-xs text-slate-400 dark:text-slate-500">{event.time}</span>
+                    <span className="font-mono text-xs text-slate-400 dark:text-slate-500">{event.step}</span>
                     <span className={`rounded-full px-2 py-0.5 font-mono text-xs ${s.badge}`}>{s.label}</span>
                   </div>
                   <h4 className="mt-1.5 font-semibold">{event.title}</h4>

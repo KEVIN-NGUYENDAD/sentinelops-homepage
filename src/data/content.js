@@ -138,6 +138,74 @@ export const projects = [
   },
 ]
 
+export const mcpPortal = {
+  eyebrow: 'MCP Portal',
+  title: 'MCP Portal',
+  subtitle: 'Model Context Protocol Security, AI Agents, SOC Automation, and DFIR Tooling',
+  overview:
+    'MCP Portal is the hub for everything built on the Model Context Protocol at SentinelOps — the layer that gives AI agents scoped, auditable access to SOC and DFIR tooling instead of unrestricted access to production systems. It centers on mcp-cyber-tools, the MCP server implementation behind kevin-cyber-security-copilot and Sass-ai-app.',
+  capabilities: {
+    heading: 'Featured Capabilities',
+    items: [
+      {
+        title: 'Threat Intel Enrichment',
+        description: 'Scoped MCP tools query VirusTotal, AbuseIPDB, and internal threat intel to enrich IOCs on demand.',
+        icon: 'search',
+      },
+      {
+        title: 'Log Parsing & Triage',
+        description: 'Agents parse and summarize log bundles to speed up first-pass SOC triage.',
+        icon: 'terminal',
+      },
+      {
+        title: 'IOC Pivoting',
+        description: 'Pivot across indicators of compromise to build investigation context for an analyst to review.',
+        icon: 'radar',
+      },
+      {
+        title: 'Audited Tool Access',
+        description: 'Every tool call is scoped to a permission tier and logged — no unsupervised write access to production systems.',
+        icon: 'shield',
+      },
+      {
+        title: 'Incident Timeline Drafting',
+        description: 'Agents draft DFIR timelines from raw event data for an analyst to verify and finalize.',
+        icon: 'clock',
+      },
+      {
+        title: 'Prompt-Injection Guardrails',
+        description: 'Defenses validated through an ongoing red-team exercise — see the Labs section below.',
+        icon: 'bot',
+      },
+    ],
+  },
+  architecture: {
+    heading: 'Architecture',
+    flow: ['AI Agent', 'MCP Server (mcp-cyber-tools)', 'SOC & DFIR Data Sources'],
+    note: 'AI agents never touch SOC systems directly — every request passes through scoped, audited MCP tool tiers.',
+  },
+  repository: {
+    heading: 'GitHub Repository',
+    name: 'mcp-cyber-tools',
+    url: 'https://github.com/KEVIN-NGUYENDAD/mcp-cyber-tools',
+    description: 'Source for the MCP server layer described above.',
+  },
+  roadmap: {
+    heading: 'Roadmap',
+    items: [
+      'Expand IOC enrichment to additional threat intel sources',
+      'Add write-scoped response actions with human-in-the-loop approval',
+      'Formalize the prompt-injection test suite from the Labs section',
+      'Publish API documentation for the MCP tool schema',
+    ],
+  },
+  status: {
+    heading: 'Project Status',
+    label: 'Active Development',
+    note: 'Under active development as the AI-agent layer for the rest of the SentinelOps tooling.',
+  },
+}
+
 export const skillGroups = [
   {
     title: 'Detection & Monitoring',
@@ -229,6 +297,22 @@ export const liveInfrastructure = {
       description: 'Multi-tenant AI agent platform for check-in workflows and automation — currently in a private beta.',
       metric: { label: 'Tenants', value: 'Private beta' },
     },
+  ],
+}
+
+export const sentinelOpsInfrastructure = {
+  eyebrow: 'Infrastructure',
+  title: 'SentinelOps Infrastructure',
+  intro: 'The domains and contact points that make up the SentinelOps ecosystem.',
+  active: [
+    { label: 'sentinelops.fyi', type: 'Main Website', href: 'https://sentinelops.fyi' },
+    { label: 'audit.sentinelops.fyi', type: 'Audit Tool', href: 'https://audit.sentinelops.fyi' },
+    { label: 'contact@sentinelops.fyi', type: 'General Contact', href: 'mailto:contact@sentinelops.fyi' },
+    { label: 'kevin@sentinelops.fyi', type: 'Direct Contact', href: 'mailto:kevin@sentinelops.fyi' },
+  ],
+  comingSoon: [
+    { label: 'soc.sentinelops.fyi', type: 'Home-SOC Dashboard' },
+    { label: 'mcp.sentinelops.fyi', type: 'MCP Portal' },
   ],
 }
 
@@ -392,7 +476,7 @@ export const threatReport = {
   date: '2026-09-03',
   status: 'Resolved',
   summary:
-    'All malicious requests were blocked by VNetwork WAAP before reaching the Render origin application. No origin-level remediation was required.',
+    'VNetwork WAAP identified and blocked 6 malicious HTTP requests originating from a United States-based source. All 6 requests were classified as injection attempts and were blocked at the edge before reaching the Render origin application. No origin-level remediation was required.',
   stats: [
     { label: 'Malicious Requests Detected', value: '6', icon: 'radar', tone: 'alert' },
     { label: 'Attack Type', value: 'Injection', icon: 'terminal', tone: 'alert' },
@@ -400,9 +484,9 @@ export const threatReport = {
     { label: 'Requests Blocked', value: '6 / 6', icon: 'shield', tone: 'signal' },
   ],
   triggeredPaths: [
-    { path: '/admin', description: 'Automated admin-panel discovery scan.' },
-    { path: '/test123', description: 'Generic throwaway test path used for endpoint recon.' },
-    { path: '/thewall-demo', description: 'Injection payload targeted at the TheWall demo endpoint.' },
+    { path: '/admin', description: 'Targeted by an automated admin-panel discovery scan.' },
+    { path: '/test123', description: 'Probed as a generic reconnaissance path.' },
+    { path: '/thewall-demo', description: 'Received an injection payload targeting the TheWall demo endpoint.' },
   ],
   securityControls: [
     {
@@ -423,33 +507,33 @@ export const threatReport = {
   ],
   timeline: [
     {
-      time: 'T+0:00',
+      step: 'Step 1',
       title: 'Scan activity detected',
-      description: 'Automated scanner begins probing audit.sentinelops.fyi from a US-based source IP.',
+      description: 'VNetwork WAAP flagged inbound scanning activity against audit.sentinelops.fyi from a United States-based source.',
       status: 'detected',
     },
     {
-      time: 'T+0:02',
-      title: 'Injection attempt blocked',
-      description: 'Injection payload submitted against /thewall-demo — blocked by rule TheWall-Demo.',
+      step: 'Step 2',
+      title: 'Injection attempt blocked — /thewall-demo',
+      description: 'An injection payload submitted to /thewall-demo was blocked by the TheWall-Demo rule.',
       status: 'blocked',
     },
     {
-      time: 'T+0:04',
-      title: 'Admin scan blocked',
-      description: 'Request to /admin blocked by rule Block-Admin-Scan.',
+      step: 'Step 3',
+      title: 'Admin scan blocked — /admin',
+      description: 'A request to /admin was blocked by the Block-Admin-Scan rule.',
       status: 'blocked',
     },
     {
-      time: 'T+0:06',
-      title: 'Recon probe blocked',
-      description: 'Request to /test123 blocked by rule Block-Test123.',
+      step: 'Step 4',
+      title: 'Recon probe blocked — /test123',
+      description: 'A request to /test123 was blocked by the Block-Test123 rule.',
       status: 'blocked',
     },
     {
-      time: 'T+0:09',
-      title: 'Session closed',
-      description: 'All 6 requests blocked at the edge — zero requests reached the Render origin.',
+      step: 'Step 5',
+      title: 'Incident resolved',
+      description: 'All 6 requests were blocked at the edge. No requests reached the Render origin application.',
       status: 'resolved',
     },
   ],
@@ -470,6 +554,6 @@ export const threatReport = {
 
 export const contact = {
   heading: "Let's talk security",
-  body: "Tôi đang phát triển các dự án về SOC, DFIR, MCP, AI Security và Security Automation thông qua hệ sinh thái SentinelOps.\n\nNếu bạn quan tâm đến bất kỳ dự án nào trên website này, muốn trao đổi ý tưởng hoặc hợp tác phát triển, hãy liên hệ với tôi qua email. Tôi đọc tất cả email gửi đến.",
+  body: "I'm building projects across SOC, DFIR, MCP, AI Security, and Security Automation through the SentinelOps ecosystem.\n\nIf you're interested in any project on this website, would like to discuss ideas, or explore a potential collaboration, feel free to reach out.\n\nI read every email that comes in.",
   email: 'contact@sentinelops.fyi',
 }

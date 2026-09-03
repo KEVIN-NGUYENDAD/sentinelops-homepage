@@ -5,12 +5,13 @@ import Icon from './Icon.jsx'
 const links = [
   { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
+  { href: '#mcp-portal', label: 'MCP Portal' },
   { href: '#infrastructure', label: 'Infra' },
   { href: '#labs', label: 'Labs' },
   { href: '#skills', label: 'Skills' },
   { href: '#waf-case-study', label: 'WAF Study' },
   { href: '#timeline', label: 'Timeline' },
-  { href: '#threat-report', label: 'Threat Report' },
+  { href: '#threat-report', label: 'Reports' },
   { href: '#contact', label: 'Contact' },
 ]
 

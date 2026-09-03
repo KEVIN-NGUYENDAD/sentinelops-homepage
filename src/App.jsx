@@ -3,7 +3,9 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import FeaturedProjects from './components/FeaturedProjects.jsx'
+import MCPPortal from './components/MCPPortal.jsx'
 import LiveInfrastructure from './components/LiveInfrastructure.jsx'
+import SentinelOpsInfrastructure from './components/SentinelOpsInfrastructure.jsx'
 import Labs from './components/Labs.jsx'
 import Skills from './components/Skills.jsx'
 import WAFCaseStudy from './components/WAFCaseStudy.jsx'
@@ -21,7 +23,9 @@ export default function App() {
           <Hero />
           <About />
           <FeaturedProjects />
+          <MCPPortal />
           <LiveInfrastructure />
+          <SentinelOpsInfrastructure />
           <Labs />
           <Skills />
           <WAFCaseStudy />
