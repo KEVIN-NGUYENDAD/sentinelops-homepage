@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0e14" />
+    <meta
+      name="description"
+      content="Kevin (Tam) Nguyen — cybersecurity engineer specializing in SOC operations, DFIR, AI security, and home-lab security automation. Portfolio and case studies."
+    />
+    <meta property="og:title" content="Kevin Nguyen — SentinelOps | Cybersecurity Portfolio" />
+    <meta
+      property="og:description"
+      content="SOC, DFIR, MCP tooling, home-lab security operations, and AI security engineering."
+    />
+    <meta property="og:type" content="website" />
+    <title>Kevin Nguyen | SentinelOps — Cybersecurity Portfolio</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-ink-950 text-slate-900 dark:text-slate-100 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
