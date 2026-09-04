@@ -33,6 +33,8 @@ const paths = {
     'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1 2v6.4l4.5 2.6 1-1.7-3.5-2V6h-2Z',
   pulse:
     'M2 11h3.2l1.5-5 3.4 11L12.5 8l1.6 3H22v2h-9.2l-1.1-2.1-2.4 8.4L6 9.4 5 13H2v-2Z',
+  phone:
+    'M7 1h10v22H7V1Zm1 2v17h8V3ZM10 6h4v1.4h-4V6ZM9.5 10h5v1.3h-5V10ZM9.5 12.5h3.5v1.3h-3.5V12.5Z',
 }
 
 export default function Icon({ name, className = 'w-5 h-5', ...props }) {

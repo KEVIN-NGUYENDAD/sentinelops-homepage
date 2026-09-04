@@ -3,7 +3,7 @@ const GITHUB_PROFILE = 'https://github.com/KEVIN-NGUYENDAD'
 export const profile = {
   name: 'Kevin (Tam) Nguyen',
   handle: 'sentinelops',
-  role: 'Cybersecurity Student | SOC | DFIR | AI Security',
+  role: 'Building an AI Security Operations Platform',
   location: 'Based remote-first',
   tagline: 'I build the SOC tooling, detections, and AI-security guardrails I want to work with on a real team.',
   summary:
@@ -15,6 +15,58 @@ export const profile = {
     { label: 'Audit Tool', href: 'https://audit.sentinelops.fyi', icon: 'shield' },
   ],
   resumeHref: '/resume.pdf',
+}
+
+export const currentFocus = {
+  label: 'Current Focus',
+  description:
+    'Building the next generation of security operations using MCP, AI agents, Home-SOC telemetry, and security automation.',
+}
+
+export const platformArchitecture = {
+  eyebrow: 'Platform Architecture',
+  title: 'SentinelOps Architecture',
+  subtitle: 'How the platform connects security telemetry, AI-assisted analysis, and operational workflows.',
+  flow: [
+    'Internet',
+    'VNetwork WAAP',
+    'Audit Platform',
+    'Home SOC',
+    'MCP Intelligence Layer',
+    'GitHub Incident Queue',
+    'Mobile Response',
+  ],
+  description: [
+    'SentinelOps combines web application protection, home-lab telemetry, AI-assisted analysis, and incident management into a single operational workflow.',
+    'Instead of treating security tools as isolated systems, SentinelOps brings them together into one platform focused on detection, analysis, and response.',
+  ],
+  components: [
+    {
+      title: 'WAAP',
+      description: 'Protects public services and blocks malicious traffic before it reaches the origin.',
+      icon: 'shield',
+    },
+    {
+      title: 'Home SOC',
+      description: 'Generates security telemetry through Wazuh, Suricata, Zeek, and threat-hunting workflows.',
+      icon: 'server',
+    },
+    {
+      title: 'MCP Intelligence Layer',
+      description: 'Acts as the AI-assisted analysis layer responsible for enrichment, investigation support, and automation.',
+      icon: 'bot',
+    },
+    {
+      title: 'GitHub Incident Queue',
+      description: 'Tracks incidents, investigations, and response activities.',
+      icon: 'github',
+    },
+    {
+      title: 'Mobile Response',
+      description: 'Allows monitoring and response directly from GitHub Mobile on iPhone.',
+      icon: 'phone',
+    },
+  ],
 }
 
 export const focusAreas = [

@@ -1,6 +1,7 @@
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
+import Architecture from './components/Architecture.jsx'
 import About from './components/About.jsx'
 import FeaturedProjects from './components/FeaturedProjects.jsx'
 import MCPPortal from './components/MCPPortal.jsx'
@@ -22,6 +23,7 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
+          <Architecture />
           <About />
           <FeaturedProjects />
           <MCPPortal />

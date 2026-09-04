@@ -3,6 +3,7 @@ import { useTheme } from '../context/ThemeContext.jsx'
 import Icon from './Icon.jsx'
 
 const links = [
+  { href: '#architecture', label: 'Architecture' },
   { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#mcp-portal', label: 'MCP' },
@@ -45,7 +46,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-4 xl:flex">
+        <ul className="hidden items-center gap-3 xl:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a

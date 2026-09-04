@@ -6,10 +6,10 @@ export default function FeaturedProjects() {
     <section id="projects" className="section border-t border-slate-100 dark:border-ink-700">
       <div className="container-px mx-auto max-w-6xl">
         <p className="eyebrow">Featured Projects</p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Selected work</h2>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Platform Components</h2>
         <p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-300">
-          Tools built to close the gap between AI agents and real security operations — plus the
-          infrastructure that keeps them safe to expose publicly.
+          Each project below is a working component of the SentinelOps platform shown in the
+          architecture above — closing the gap between AI agents and real security operations.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">

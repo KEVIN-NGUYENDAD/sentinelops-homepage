@@ -1,5 +1,6 @@
 import { profile } from '../data/content.js'
 import Icon from './Icon.jsx'
+import CurrentFocusBanner from './CurrentFocusBanner.jsx'
 
 export default function Hero() {
   return (
@@ -54,6 +55,8 @@ export default function Hero() {
             </a>
           ))}
         </div>
+
+        <CurrentFocusBanner />
       </div>
     </section>
   )
